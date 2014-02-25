@@ -10,10 +10,6 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    # /posts/:post_id/comments/:id
-    # first have to find the specific post_id the comment was a part of
-    # then find the comment id we want to call destroy on
-    # finally redirect to post_path
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
     @comment.destroy
